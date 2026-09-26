@@ -61,4 +61,4 @@ yarn vitest:watch
 
 ## Deployment
 
-*(Replace with deployed application URL)*
+*(https://sde-front-assignment.vercel.app/)*
