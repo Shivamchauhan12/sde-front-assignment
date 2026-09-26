@@ -87,10 +87,11 @@ export function AssessmentForm({ onSave }: AssessmentFormProps) {
     setLoading(true);
     setSubmittedData(null);
 
-    // Simulate async saving (~800ms)
+    // Simulated save delay (~800ms)
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    const parsedValues = values as unknown as Assessment;
+    // Parse values via Zod schema to ensure output matches Assessment shape
+    const parsedValues = assessmentSchema.parse(values);
 
     if (onSave) {
       await onSave(parsedValues);
