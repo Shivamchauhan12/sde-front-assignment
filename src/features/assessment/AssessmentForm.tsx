@@ -98,6 +98,7 @@ export function AssessmentForm({ onSave }: AssessmentFormProps) {
     }
 
     setSubmittedData(parsedValues);
+    form.reset();
     setLoading(false);
   });
 
