@@ -156,9 +156,14 @@ export function AssessmentForm({ onSave }: AssessmentFormProps) {
 
             <Select
               label="Mobility"
+              placeholder="Select mobility"
               data={mobilityOptions}
               key={form.key('mobility')}
-              {...form.getInputProps('mobility')}
+              value={form.values.mobility || null}
+              onChange={(val) =>
+                form.setFieldValue('mobility', (val as Assessment['mobility']) || '')
+              }
+              error={form.errors.mobility}
             />
 
             <NumberInput
