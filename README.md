@@ -1,34 +1,64 @@
-# Mantine Vite template
+# Geriatric Care Assessment Form
+
+A single-page form application designed for visiting nurses conducting elderly patient assessments at home. Built with React 19, TypeScript, Mantine UI v9, and Zod v4.
 
 ## Features
 
-This template comes with the following features:
+- **Schema-Driven Validation**: All 10 form fields and cross-field rules validated via Zod schema using `@mantine/form`'s `schemaResolver`.
+- **Dynamic Field Mapping**: Select options for mobility dynamically generated from the `MOBILITY` array.
+- **Strict Clinical Inputs**: Blank/unselected inputs remain unsubmitted; no default values pre-filled for clinical scores.
+- **Sample Data Fixture**: Includes a "Load sample patient" button for filling valid sample patient data.
+- **Simulated Save Flow**: Submitting valid data shows a loading state (~800ms delay) and displays the parsed Zod object output upon success.
+- **Comprehensive Test Suite**: Vitest and React Testing Library tests for schema boundaries (e.g. 60-year age requirement) and rendered form interaction.
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- Oxlint setup for TypeScript and React sources
+## Tech Stack
 
-## npm scripts
+- **React 19** & **TypeScript**
+- **Mantine UI 9** (`@mantine/core`, `@mantine/dates`, `@mantine/form`)
+- **Zod 4**
+- **Vitest** & **React Testing Library**
+- **Vite**
 
-## Build and dev scripts
+## Getting Started
 
-- `dev` – start development server
-- `build` – build production version of the app
-- `preview` – locally preview production build
+### Prerequisites
 
-### Testing scripts
+- Node.js (v18+)
+- Yarn (v4)
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs oxlint and stylelint
-- `format:test` – checks files with oxfmt
-- `vitest` – runs vitest tests
-- `vitest:watch` – starts vitest watch
-- `test` – runs `vitest`, `format:test`, `lint` and `typecheck` scripts
+### Installation
 
-### Other scripts
+```bash
+yarn install
+```
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `format:write` – formats all files with oxfmt
+### Development Server
+
+Start the development server:
+
+```bash
+yarn dev
+```
+
+### Running Tests & Full Verification
+
+Run the full validation suite (includes type checking, formatting checks, linting, Vitest tests, and production build):
+
+```bash
+yarn test
+```
+
+To run tests in watch mode:
+
+```bash
+yarn vitest:watch
+```
+
+## Time Spent & Completion Summary
+
+- **Total Time Spent**: ~2 hours
+- **Status**: All features, validation rules, UI requirements, and test requirements completed.
+
+## Deployment
+
+*(Replace with deployed application URL)*
